@@ -72,6 +72,7 @@ public class Program extends Application{
         });
 
         ////***********************************************
+        
         Label label3=new Label("Odgovor servera:");
         AnchorPane.setLeftAnchor(label3,20.0);
         AnchorPane.setTopAnchor(label3,240.0);
@@ -79,22 +80,7 @@ public class Program extends Application{
         Label label4=new Label("");
         AnchorPane.setLeftAnchor(label4,115.0);
         AnchorPane.setTopAnchor(label4,240.0);
-        Button igrica=new Button("Sequence 4x4");
-        AnchorPane.setTopAnchor(igrica,160.0);
-        AnchorPane.setLeftAnchor(igrica,20.0);
-        igrica.setPrefWidth(450);
-        igrica.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                Sequence sequence=new Sequence();
-                try {
-                    sequence.start(new Stage());
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
-
+     
         //**************************************************
 
         Button izaberi=new Button("Izaberi");
@@ -114,7 +100,6 @@ public class Program extends Application{
         posalji.setPrefWidth(200);
         AnchorPane.setTopAnchor(posalji,200.0);
         AnchorPane.setLeftAnchor(posalji,270.0);
-
         posalji.setOnAction(new EventHandler<ActionEvent>() {
             Socket socket = new Socket("127.0.0.1", 900);
             BufferedReader ulaz=new BufferedReader(new InputStreamReader(socket.getInputStream()));
